@@ -51,10 +51,39 @@ Source: ".\DotNetSetup.exe"; DestDir: {tmp}; Flags: deleteafterinstall; AfterIns
 
 [Icons]
 Name: "{group}\Edico Italia"; Filename: "{app}\EdicoTI.exe"; IconFilename:{app}\EdicoTI.exe;
+Name: "{group}\Utility di Edico"; Filename: "{app}\EdicoTI.exe"; Parameters: "/utility"; IconFilename:{app}\EdicoTI.exe;
 Name: {userdesktop}\Edico Italia; Filename: {app}\EdicoTI.exe; IconFilename:{app}\EdicoTI.exe;
 
 
 [Code]
+
+function OldEdicoIsPresent: Boolean;
+begin
+  Result := RegKeyExists(HKEY_CURRENT_USER, 'Software\Microsoft\Windows\CurrentVersion\Uninstall\EDICO_is1');
+end;
+
+function InitializeSetup(): Boolean;
+var
+  path: String;
+  returned: integer;
+  retd: boolean;
+begin
+  Result := True;
+  if OldEdicoIsPresent then
+  begin
+    if MsgBox('Nel sistema è già presente una precedente versione di EDICO che deve essere rimossa prima di poter effettuare una nuova installazione. Si desidera disinstallarla ora?', mbInformation, MB_YESNO) = IDYES then
+    begin
+      RegQueryStringValue(HKEY_CURRENT_USER, 'Software\Microsoft\Windows\CurrentVersion\Uninstall\EDICO_is1','UninstallString',path);
+      StringChangeEx(path, '"', '', True);
+      retd := Exec(path, '/SILENT', '', SW_SHOW, ewWaitUntilTerminated, returned);
+    end
+    else
+    begin
+      Result := False;
+    end;
+  end;
+end;
+
 procedure InstallFramework;
 var
   ResultCode: Integer;
@@ -71,6 +100,7 @@ function FrameworkIsNotInstalled: Boolean;
 begin
   Result := not RegKeyExists(HKEY_LOCAL_MACHINE, 'SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full');
 end;
+
 
 [Messages]
 WelcomeLabel2=Benvenuti nel programma di installazione di EDICO Targato italia, il programma che rende facile l'installazione di EDICO per gli utenti italiani. Il sito web del progetto è www.edicoitalia.it .

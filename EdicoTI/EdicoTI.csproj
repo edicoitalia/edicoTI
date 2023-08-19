@@ -65,6 +65,12 @@
     <Compile Include="DlgInfoText.Designer.cs">
       <DependentUpon>DlgInfoText.cs</DependentUpon>
     </Compile>
+    <Compile Include="DlgUtility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgUtility.Designer.cs">
+      <DependentUpon>DlgUtility.cs</DependentUpon>
+    </Compile>
     <Compile Include="EdicoFileChanger.cs" />
     <Compile Include="INIFile.cs" />
     <Compile Include="JAWSManager.cs" />
@@ -78,6 +84,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DlgInfoText.resx">
       <DependentUpon>DlgInfoText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DlgUtility.resx">
+      <DependentUpon>DlgUtility.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

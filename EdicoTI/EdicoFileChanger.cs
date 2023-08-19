@@ -16,6 +16,33 @@ namespace EdicoTI
 	internal class EdicoFileChanger
 	{
 
+		public static bool resetSettings()
+		{
+			bool retval = false;
+			string dataDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+			dataDir = Path.Combine(dataDir, "Apps", "2.0", "Data");
+			if (!Directory.Exists(dataDir)) return false;
+			string[] configFiles = Directory.GetFiles(dataDir, "user.config", SearchOption.AllDirectories);
+			foreach (var file in configFiles)
+			{
+				retval = retval || deleteUserConfig(file);
+			}
+			return retval;
+		}
+
+		private static bool deleteUserConfig(string xmlFile)
+		{
+			XDocument doc = XDocument.Load(xmlFile);
+			XElement elem = doc.Element("configuration");
+			if (elem == null) return false;
+			elem = elem.Element("userSettings");
+			if (elem == null) return false;
+			elem = elem.Element("Edico.Properties.Settings");
+			if (elem == null) return false;
+			File.Delete(xmlFile);
+			return true;
+		}
+
 		public static void crawlAndChange()
 		{
 			string dataDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
