@@ -1,0 +1,6 @@
+[Braille Profiles]
+ita=1|999|Euro_Unicode|Euro_Unicode|0
+[Braille]
+Grade2ExpandCurrentWord=0
+PreferredBrailleProfiles=ita
+PrimaryBrailleProfile=ita
