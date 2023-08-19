@@ -20,6 +20,7 @@ namespace EdicoTI
 		{
 			string dataDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 			dataDir = Path.Combine(dataDir, "Apps", "2.0", "Data");
+			if (!Directory.Exists(dataDir)) return;
 			string[] keyboardFiles = Directory.GetFiles(dataDir, "ShortCutKeys.xml", SearchOption.AllDirectories);
 			string[] configFiles = Directory.GetFiles(dataDir, "user.config", SearchOption.AllDirectories);
 			foreach(var file in configFiles)
