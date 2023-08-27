@@ -155,7 +155,8 @@ namespace EdicoTI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Si desidera verificare la disponibilità di nuovi aggiornamenti di EDICO Targato Italia le prossime volte che il programma viene avviato? Se si risponde No, EDICO Targato Italia non verificherà più su internet la presenza di aggiornamenti.
+        ///   Looks up a localized string similar to Si desidera verificare la disponibilità di nuovi aggiornamenti di EDICO Targato Italia le prossime volte che il programma viene avviato? 
+        ///Se si risponde No, EDICO Targato Italia non verificherà più su internet la presenza di aggiornamenti.
         /// </summary>
         internal static string updateReminder {
             get {
@@ -164,7 +165,8 @@ namespace EdicoTI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to È disponibile su internet una versione aggiornata di EDICO Targato Italia. Le nuove versioni offrono un supporto ancora migliore al software EDICO e se ne consiglia l’installazione. Si desidera procedere ora a scaricare e installare il nuovo Edico Targato Italia?.
+        ///   Looks up a localized string similar to È disponibile su internet una versione aggiornata di EDICO Targato Italia. Le nuove versioni offrono un supporto ancora migliore al software EDICO e se ne consiglia l’installazione. 
+        ///Si desidera scaricare e installare il nuovo Edico Targato Italia?.
         /// </summary>
         internal static string updateText {
             get {

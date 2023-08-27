@@ -158,10 +158,12 @@ E' possibile scaricare e installare l'ultima versione dell'addon utilizzando la 
 Eseguire EDICO comunque?</value>
   </data>
   <data name="updateReminder" xml:space="preserve">
-    <value>Si desidera verificare la disponibilità di nuovi aggiornamenti di EDICO Targato Italia le prossime volte che il programma viene avviato? Se si risponde No, EDICO Targato Italia non verificherà più su internet la presenza di aggiornamenti</value>
+    <value>Si desidera verificare la disponibilità di nuovi aggiornamenti di EDICO Targato Italia le prossime volte che il programma viene avviato? 
+Se si risponde No, EDICO Targato Italia non verificherà più su internet la presenza di aggiornamenti</value>
   </data>
   <data name="updateText" xml:space="preserve">
-    <value>È disponibile su internet una versione aggiornata di EDICO Targato Italia. Le nuove versioni offrono un supporto ancora migliore al software EDICO e se ne consiglia l’installazione. Si desidera procedere ora a scaricare e installare il nuovo Edico Targato Italia?</value>
+    <value>È disponibile su internet una versione aggiornata di EDICO Targato Italia. Le nuove versioni offrono un supporto ancora migliore al software EDICO e se ne consiglia l’installazione. 
+Si desidera scaricare e installare il nuovo Edico Targato Italia?</value>
   </data>
   <data name="welcomeText" xml:space="preserve">
     <value>Benvenuti in EDICO Targato Italia!
