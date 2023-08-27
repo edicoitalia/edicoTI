@@ -29,7 +29,7 @@ DisableDirPage=yes
 DefaultGroupName=EDICO
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 PrivilegesRequired=lowest
-OutputBaseFilename="edicoitalia"
+OutputBaseFilename="edicoti"
 OutputDir=".\"
 Compression=lzma
 SolidCompression=yes
@@ -50,9 +50,9 @@ Source: ".\edicoti\bin\release\*"; DestDir: "{app}"; Flags: ignoreversion recurs
 Source: ".\DotNetSetup.exe"; DestDir: {tmp}; Flags: deleteafterinstall; AfterInstall: InstallFramework; Check: FrameworkIsNotInstalled
 
 [Icons]
-Name: "{group}\Edico Italia"; Filename: "{app}\EdicoTI.exe"; IconFilename:{app}\EdicoTI.exe;
+Name: "{group}\Edico Targato Italia"; Filename: "{app}\EdicoTI.exe"; IconFilename:{app}\EdicoTI.exe;
 Name: "{group}\Utility di Edico"; Filename: "{app}\EdicoTI.exe"; Parameters: "/utility"; IconFilename:{app}\EdicoTI.exe;
-Name: {userdesktop}\Edico Italia; Filename: {app}\EdicoTI.exe; IconFilename:{app}\EdicoTI.exe;
+Name: {userdesktop}\Edico Targato Italia; Filename: {app}\EdicoTI.exe; IconFilename:{app}\EdicoTI.exe;
 
 
 [Code]

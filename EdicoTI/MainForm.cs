@@ -163,11 +163,38 @@ namespace EdicoTI
 			}
 		}
 
+		private void liveUpdate()
+		{
+			if (!Properties.Settings.Default.updateCheck) return;
+			try
+			{
+				var url = LiveUpdate.checkForUpdate();
+				if(url != null)
+				{
+					var dResult = MessageBox.Show(Properties.Resources.updateText, "Aggiornamenti disponibili",MessageBoxButtons.YesNo);
+					if(dResult == DialogResult.Yes)
+					{
+						new LiveUpdate(url).ShowDialog();
+					}
+					else
+					{
+						dResult = MessageBox.Show(Properties.Resources.updateReminder, "Notifiche aggiornamenti", MessageBoxButtons.YesNo);
+						if(dResult == DialogResult.No)
+						{
+							Properties.Settings.Default.updateCheck = false;
+							Properties.Settings.Default.Save();
+						}
+					}
+				}
+			} catch { } //no internet... skip
+		}
+
 		private void timer1_Tick(object sender, EventArgs e)
 		{
 			tick = tick + 1;
 			if(tick == 10)
 			{
+				liveUpdate();
 				try
 				{
 					launchAll();

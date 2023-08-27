@@ -1,13 +1,4 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<!--
-/*
- * A part of Edico Targato Italia
- * Copyright (C) 2023 Alberto Zanella - EdicoItalia.it
- * This file is covered by the GNU General Public License.
- * See the file LICENSE for more details.
- * 
-*/
--->
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EdicoTI.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
@@ -15,6 +6,12 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="jfwCheck" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="updateUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://raw.githubusercontent.com/edicoitalia/edicoTI/stable/currentVersion.json</Value>
+    </Setting>
+    <Setting Name="updateCheck" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
