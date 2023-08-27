@@ -29,7 +29,7 @@ DisableDirPage=yes
 DefaultGroupName=EDICO
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 PrivilegesRequired=lowest
-OutputBaseFilename="edicoti"
+OutputBaseFilename="edicoTI-setup"
 OutputDir=".\"
 Compression=lzma
 SolidCompression=yes
