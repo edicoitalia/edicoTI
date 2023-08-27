@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+ * A part of Edico Targato Italia
+ * Copyright (C) 2023 Alberto Zanella - EdicoItalia.it
+ * This file is covered by the GNU General Public License.
+ * See the file LICENSE for more details.
+ * 
+*/
+
+using System;
 using System.Net;
 using System.IO;
 using System.ComponentModel;
