@@ -52,6 +52,7 @@ namespace EdicoTI
         {
             System.Diagnostics.Process.Start(downloadedFilePath);
             if(closeApp) Application.Exit();
+            this.btnCancel.Text = "&Chiudi";
         }
 
         public static string checkForUpdate()

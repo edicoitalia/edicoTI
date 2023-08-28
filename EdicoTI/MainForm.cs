@@ -101,7 +101,7 @@ namespace EdicoTI
 					}
 					else
 					{
-						DialogResult result = MessageBox.Show(Properties.Resources.nvdaSuggestion + Properties.Resources.nvdaInternet, "EDICO Targato Italia");
+						DialogResult result = MessageBox.Show(Properties.Resources.nvdaSuggestion + Properties.Resources.nvdaInternet, "EDICO Targato Italia", MessageBoxButtons.YesNo);
 						if (result == DialogResult.No)
 						{
 							result = MessageBox.Show(Properties.Resources.nvdaSkip, "EDICO Targato Italia", MessageBoxButtons.YesNo);
@@ -113,7 +113,7 @@ namespace EdicoTI
 						}
 						else
 						{
-							new LiveUpdate(url, false, "Addon di EDICO per NVDA", "Download dell'addon di NVDA per EDICO.\n");
+							new LiveUpdate(url, false, "Addon di EDICO per NVDA", "Download dell'addon di NVDA per EDICO.\n").ShowDialog();
 						}
 					}
 				}
