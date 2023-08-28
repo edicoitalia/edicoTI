@@ -89,15 +89,20 @@ namespace EdicoTI
 				DialogResult result = dlgWelcome.ShowDialog();
 				if (result == DialogResult.Cancel) return;
 			}
-			if (isProcessRunning("nvda") != null)
+			if ((isProcessRunning("nvda") != null) && 
+				(Properties.Settings.Default.nvdaCheck))
 			{
-				if (Properties.Settings.Default.nvdaCheck)
+				if (!Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "nvda", "addons", "edico")))
 				{
-					//Check if exists nvda addon
-					if (!Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "nvda", "addons", "edico")))
+					string url = LiveUpdate.getNVDAUrl();
+					if (url == null) //no internet
 					{
-						DialogResult result = MessageBox.Show(Properties.Resources.nvdaSuggestion, "EDICO Targato Italia", MessageBoxButtons.YesNo);
-						if (result == DialogResult.Yes)
+						MessageBox.Show(Properties.Resources.nvdaSuggestion + Properties.Resources.nvdaNoInternet, "EDICO Targato Italia");
+					}
+					else
+					{
+						DialogResult result = MessageBox.Show(Properties.Resources.nvdaSuggestion + Properties.Resources.nvdaInternet, "EDICO Targato Italia");
+						if (result == DialogResult.No)
 						{
 							result = MessageBox.Show(Properties.Resources.nvdaSkip, "EDICO Targato Italia", MessageBoxButtons.YesNo);
 							if (result == DialogResult.No)
@@ -106,7 +111,10 @@ namespace EdicoTI
 								Properties.Settings.Default.Save();
 							}
 						}
-						else Application.Exit();
+						else
+						{
+							new LiveUpdate(url, false, "Addon di EDICO per NVDA", "Download dell'addon di NVDA per EDICO.\n");
+						}
 					}
 				}
 			}

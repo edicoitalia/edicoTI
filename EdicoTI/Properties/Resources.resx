@@ -149,13 +149,18 @@ Lanciare nuovamente EDICO per completare l'operazione.</value>
                 AllowInput="1" /&gt;
     &lt;/Modes&gt;</value>
   </data>
+  <data name="nvdaInternet" xml:space="preserve">
+    <value>Installare l'addon per NVDA ora?</value>
+  </data>
+  <data name="nvdaNoInternet" xml:space="preserve">
+    <value>Non è possibile collegarsi al server per installare l'addon in modo automatico. Procedere manualmente a scaricare e installare l'addon di NVDA per EDICO.</value>
+  </data>
   <data name="nvdaSkip" xml:space="preserve">
     <value>Si desidera ricevere un avviso relativo all'addon di NVDA anche al prossimo avvio di EDICO?</value>
   </data>
   <data name="nvdaSuggestion" xml:space="preserve">
     <value>E' stato rilevato che si sta usando lo screen reader NVDA. Per ottenere un pieno supporto a EDICO si consiglia di installare una versione aggiornata dell'addon di NVDA prima di eseguire EDICO.
-E' possibile scaricare e installare l'ultima versione dell'addon utilizzando la "bottega" dei componenti aggiuntivi oppure lo Store integrato in NVDA. 
-Eseguire EDICO comunque?</value>
+</value>
   </data>
   <data name="updateReminder" xml:space="preserve">
     <value>Si desidera verificare la disponibilità di nuovi aggiornamenti di EDICO Targato Italia le prossime volte che il programma viene avviato? 

@@ -1,5 +1,10 @@
 {
-    "productName": "edicoTI",
-    "version": "2023.1",
-    "url": "https://github.com/edicoitalia/edicoTI/releases/download/2023.1/edicoTI-setup.exe"
+   "edico":{
+      "version":"2023.1",
+      "url":"https://github.com/edicoitalia/edicoTI/releases/download/2023.1/edicoTI-setup.exe"
+   },
+   "edico-nvda":{
+      "version":"1.2",
+      "url":"https://github.com/edicoitalia/edico-nvda/releases/download/1.2/edico-1.2.nvda-addon"
+   }
 }

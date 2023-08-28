@@ -135,6 +135,24 @@ namespace EdicoTI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Installare l&apos;addon per NVDA ora?.
+        /// </summary>
+        internal static string nvdaInternet {
+            get {
+                return ResourceManager.GetString("nvdaInternet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Non è possibile collegarsi al server per installare l&apos;addon in modo automatico. Procedere manualmente a scaricare e installare l&apos;addon di NVDA per EDICO..
+        /// </summary>
+        internal static string nvdaNoInternet {
+            get {
+                return ResourceManager.GetString("nvdaNoInternet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Si desidera ricevere un avviso relativo all&apos;addon di NVDA anche al prossimo avvio di EDICO?.
         /// </summary>
         internal static string nvdaSkip {
@@ -145,8 +163,7 @@ namespace EdicoTI.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to E&apos; stato rilevato che si sta usando lo screen reader NVDA. Per ottenere un pieno supporto a EDICO si consiglia di installare una versione aggiornata dell&apos;addon di NVDA prima di eseguire EDICO.
-        ///E&apos; possibile scaricare e installare l&apos;ultima versione dell&apos;addon utilizzando la &quot;bottega&quot; dei componenti aggiuntivi oppure lo Store integrato in NVDA. 
-        ///Eseguire EDICO comunque?.
+        ///.
         /// </summary>
         internal static string nvdaSuggestion {
             get {
