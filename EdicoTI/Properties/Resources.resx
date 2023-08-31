@@ -172,13 +172,14 @@ Si desidera scaricare e installare il nuovo Edico Targato Italia?</value>
   </data>
   <data name="welcomeText" xml:space="preserve">
     <value>Benvenuti in EDICO Targato Italia!
-Questo è un progetto libero e gratuito, non finanziato e completamente slegato da i.ri.fo.r. e Unione Italiana dei Ciechi e degli Ipovedenti.
 
-Lo scopo del progetto è di offrire un modo semplice e veloce per installare e configurare al meglio il software EDICO nel vostro computer. 
+Lo scopo di questo progetto è di offrire un modo semplice e veloce per installare e configurare al meglio il software EDICO nel vostro computer. 
 
 EDICO è un editor scientifico adatto a persone non vedenti e ipovedenti utilizzabile con il braille, la sintesi vocale e l'ingrandimento dei caratteri. EDICO è stato ideato e realizzato da ONCE-Spagna.
 
-Cliccando sul pulsante "Continua" si procederà al download e all'installazione di EDICO.
+Il progetto è stato realizzato nello spirito del software libero in modo gratuito e slegato da enti, associazioni o aziende. Questo programma è distribuito nella speranza che possa essere utile alle persone, ma SENZA ALCUNA GARANZIA; nonché senza la garanzia implicita di COMMERCIABILITÀ o IDONEITÀ A UN FINE PARTICOLARE. Per maggiori dettagli si veda la licenza pubblica (GNU General Public License). Il software non è in alcun modo legato a distribuzioni del software di i.ri.fo.r. o altri e fornisce accesso esclusivamente all'installazione ufficiale del software EDICO realizzata, pacchettizzata e distribuita da CTI-ONCE.
+
+Cliccando sul pulsante "Continua" si accettano i termini e si procederà al download e all'installazione di EDICO.
 Per ulteriori informazioni o domande il sito web della community italiana di utenti è www.edicoitalia.it .
 
 Prima di continuare, assicuratevi di avere una connessione ad internet funzionante.  Se usate JAWS, potrebbero essere richiesti i permessi di amministratore per completare la configurazione di JAWS per EDICO.

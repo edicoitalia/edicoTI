@@ -193,11 +193,12 @@ namespace EdicoTI.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to Benvenuti in EDICO Targato Italia!
-        ///Questo è un progetto libero e gratuito, non finanziato e completamente slegato da i.ri.fo.r. e Unione Italiana dei Ciechi e degli Ipovedenti.
         ///
-        ///Lo scopo del progetto è di offrire un modo semplice e veloce per installare e configurare al meglio il software EDICO nel vostro computer. 
+        ///Lo scopo di questo progetto è di offrire un modo semplice e veloce per installare e configurare al meglio il software EDICO nel vostro computer. 
         ///
-        ///EDICO è un editor scientifico adatto a persone non vedenti e ipovedenti utilizzabile con il braille, la sintesi vocale e l&apos;ingrandimento dei caratteri. EDICO è stato ideato e realizzato da [rest of string was truncated]&quot;;.
+        ///EDICO è un editor scientifico adatto a persone non vedenti e ipovedenti utilizzabile con il braille, la sintesi vocale e l&apos;ingrandimento dei caratteri. EDICO è stato ideato e realizzato da ONCE-Spagna.
+        ///
+        ///Il progetto è stato realizzato nello spirito del software libero in modo gratuito e slegato da enti, associazioni o azie [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string welcomeText {
             get {
