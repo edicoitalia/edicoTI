@@ -71,7 +71,7 @@ begin
   Result := True;
   if OldEdicoIsPresent then
   begin
-    if MsgBox('Nel sistema è già presente una precedente versione di EDICO che deve essere rimossa prima di poter effettuare una nuova installazione. Si desidera disinstallarla ora?', mbInformation, MB_YESNO) = IDYES then
+    if MsgBox('Nel sistema è già presente una diversa distribuzione di EDICO che deve essere rimossa prima di poter effettuare una nuova installazione. Si desidera disinstallarla ora?', mbInformation, MB_YESNO) = IDYES then
     begin
       RegQueryStringValue(HKEY_CURRENT_USER, 'Software\Microsoft\Windows\CurrentVersion\Uninstall\EDICO_is1','UninstallString',path);
       StringChangeEx(path, '"', '', True);
