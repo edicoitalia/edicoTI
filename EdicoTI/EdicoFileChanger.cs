@@ -43,7 +43,7 @@ namespace EdicoTI
 			return true;
 		}
 
-		public static void crawlAndChange()
+		public static void crawlAndChange(string openFile)
 		{
 			string dataDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 			dataDir = Path.Combine(dataDir, "Apps", "2.0", "Data");
@@ -53,6 +53,10 @@ namespace EdicoTI
 			foreach(var file in configFiles)
 			{
 				changeUserConfig(file);
+				if(openFile != null)
+				{
+					setFileToOpen(file, openFile);
+				}
 			}
 			foreach (var file in keyboardFiles)
 			{
@@ -80,6 +84,55 @@ namespace EdicoTI
 			setting.Add(value);
 			elem.Add(setting);
 			doc.Save(xmlFile);
+		}
+
+		private static void setFileToOpen(string config, string openFilePath)
+		{
+			XDocument doc = XDocument.Load(config);
+			XElement elem = doc.Element("configuration");
+			if (elem == null) return;
+			elem = elem.Element("userSettings");
+			if (elem == null) return;
+			elem = elem.Element("Edico.Properties.Settings");
+			if (elem == null) return;
+			string filesOpenXMLPath = elem.Elements().Where(e =>
+				(e.Attribute("name").Value == "xmlData_path")).First().Value;
+			if (filesOpenXMLPath == null) return;
+			filesOpenXMLPath = Path.Combine(filesOpenXMLPath, "Model", "XMLs", "filesOpen.xml");
+			if (!File.Exists(filesOpenXMLPath)) return;
+			doc = XDocument.Load(filesOpenXMLPath);
+			elem = doc.Element("Files");
+			bool isPresent = false;
+			int maxPos = 0;
+			foreach(var xFile in elem.Elements())
+			{
+				string xPosition = xFile.Attribute("Position").Value;
+				if (xPosition != null)
+				{
+					int iPosition = Convert.ToInt16(xPosition);
+					if (iPosition >= maxPos) maxPos = iPosition + 1;
+				}
+				string xCurrent = xFile.Attribute("Current").Value;
+				if ((xCurrent != null) && (xCurrent == "1"))
+				{
+					xFile.Attribute("Current").Value = "0";
+				}
+				string xPath = xFile.Attribute("Path").Value;
+				if ((xPath != null) && (xPath.ToLower() == openFilePath.ToLower()))
+				{
+					xFile.Attribute("Current").Value = "1";
+					isPresent = true;
+				}
+			}
+			if (!isPresent)
+			{
+				XElement newFile = new XElement("File");
+				newFile.SetAttributeValue("Path", openFilePath);
+				newFile.SetAttributeValue("Position", maxPos);
+				newFile.SetAttributeValue("Current", "1");
+				elem.Add(newFile);
+			}
+			doc.Save(filesOpenXMLPath);
 		}
 
 		private static void changeShortcutXML(string xmlFile)

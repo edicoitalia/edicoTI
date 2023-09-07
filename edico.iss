@@ -36,6 +36,7 @@ SolidCompression=yes
 AlwaysShowComponentsList=no
 DisableWelcomePage=no
 DisableProgramGroupPage=yes
+ChangesAssociations = yes
 UninstallDisplayIcon={app}\edicoTI.exe
 
 [Languages]
@@ -54,9 +55,14 @@ Name: "{group}\Edico Targato Italia"; Filename: "{app}\EdicoTI.exe"; IconFilenam
 Name: "{group}\Utility di Edico"; Filename: "{app}\EdicoTI.exe"; Parameters: "/utility"; IconFilename:{app}\EdicoTI.exe;
 Name: {userdesktop}\Edico Targato Italia; Filename: {app}\EdicoTI.exe; IconFilename:{app}\EdicoTI.exe;
 
+[Registry]
+Root: HKCU; Subkey: "SOFTWARE\Classes\.edi"; ValueData: "Edico"; Flags: uninsdeletevalue; ValueType: string; ValueName: ""
+Root: HKCU; Subkey: "SOFTWARE\Classes\Edico"; ValueData: "EdicoTI"; Flags: uninsdeletekey;   ValueType: string; ValueName: ""
+Root: HKCU; Subkey: "SOFTWARE\Classes\Edico\DefaultIcon";ValueData: "{app}\fileIcon.ico,0"; ValueType: string; ValueName: ""
+Root: HKCU; Subkey: "SOFTWARE\Classes\Edico\shell\open\command"; ValueData: """{app}\edicoTI.exe"" ""%1"""; ValueType: string; ValueName: ""
+
 
 [Code]
-
 function OldEdicoIsPresent: Boolean;
 begin
   Result := RegKeyExists(HKEY_CURRENT_USER, 'Software\Microsoft\Windows\CurrentVersion\Uninstall\EDICO_is1');

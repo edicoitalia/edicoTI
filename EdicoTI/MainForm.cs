@@ -17,15 +17,16 @@ namespace EdicoTI
 	{
 		private static string EDICO_CIDAT_DEPLOYMENT_URL = "http://cidat.once.es/repos/edico/Edico.application";
 		private int tick;
+		private string fileParam;
 		private ClickOnceApplicationService clickOnceService;
 		private JAWSManager jawsManager;
-		public MainForm()
+		public MainForm(string fileParam)
 		{
 			InitializeComponent();
 			this.clickOnceService = new ClickOnceApplicationService(EDICO_CIDAT_DEPLOYMENT_URL);
 			this.jawsManager = new JAWSManager();
-
-		}
+			this.fileParam = fileParam;
+ 		}
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
@@ -160,7 +161,7 @@ namespace EdicoTI
 			proc.StartInfo.FileName = Process.GetCurrentProcess().MainModule.FileName.ToLower().Replace("edicoti.exe", "EdicoTray.exe");
 			proc.StartInfo.UseShellExecute = true;
 			proc.Start();
-			EdicoFileChanger.crawlAndChange();
+			EdicoFileChanger.crawlAndChange(fileParam);
 			if (clickOnceService.isInstalled())
 			{
 				clickOnceService.runClickOnce();

@@ -22,6 +22,11 @@ namespace EdicoTI
 		[STAThread]
 		static void Main(string[] args)
 		{
+			string openFile = null;
+			if(args.Length > 0 && args[0].ToLower().Trim().EndsWith(".edi"))
+			{
+				openFile = args[0];
+			}
 			if (args.Length > 0 && args[0] == "/utility")
 			{
 				Application.EnableVisualStyles();
@@ -32,7 +37,7 @@ namespace EdicoTI
 			{
 				Application.EnableVisualStyles();
 				Application.SetCompatibleTextRenderingDefault(false);
-				Application.Run(new MainForm());
+				Application.Run(new MainForm(openFile));
 			}
 		}
 	}
