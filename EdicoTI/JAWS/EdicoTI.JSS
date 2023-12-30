@@ -125,6 +125,9 @@ Void Function SayCharacter()
 
 	var string text, string numcoll, string currChar
 	numcoll = ">,;:*?+=<}"
+	if(!IsPCCursor ()) Then
+		return SayCharacter()
+	EndIf
 	If GetObjectDescription () != WND_LINEAR_EDITOR Then ;not in linear editor
 		return SayCharacter()
 	EndIf
@@ -136,8 +139,8 @@ Void Function SayCharacter()
 		return SayCharacter()
 	EndIf
 	var int ix = SendMessage (GetFocus (1), 0xB0, 0,0)
-	if ix <= 0 Then
-		return SayCharacter() ;overflow
+	if ix <= 0 Then  ;overflow
+		return SayCharacter()
 	EndIf
 	ix = ix & 0xffff
 	ix = ix + 1
@@ -148,8 +151,8 @@ Void Function SayCharacter()
 		if(!StringContains (numcoll, ch)) Then
 			ix = 0 ;break
 			var int isLetter = GetCharacterValue (ch) >= 65 && GetCharacterValue (ch) <= 90 ;uppercase
-			isLetter = isLetter + GetCharacterValue (ch) >= 97 && GetCharacterValue (ch) <= 122 ;lowercase
-			if(isLetter > 0) Then ;is a number
+			isLetter = isLetter + ( GetCharacterValue (ch) >= 97 && GetCharacterValue (ch) <= 122 ) ;lowercase
+			if(isLetter > 0) Then ; currChar is a number
 				SayMessage(OT_MESSAGE,IntToString((StringContains (numcoll, currChar))-1))
 			Else
 				SayCharacter()
