@@ -121,6 +121,44 @@ Void Function SayLine()
     return SayLine()
 EndFunction
 
+Void Function SayCharacter()
+
+	var string text, string numcoll, string currChar
+	numcoll = ">,;:*?+=<}"
+	If GetObjectDescription () != WND_LINEAR_EDITOR Then ;not in linear editor
+		return SayCharacter()
+	EndIf
+	if(GetCharacterFont() != "edico_es_chem") Then ;not in chemical context
+		return SayCharacter()
+	EndIf
+	currChar = GetCharacter ()
+	if(!StringContains (numcoll, currChar)) Then
+		return SayCharacter()
+	EndIf
+	var int ix = SendMessage (GetFocus (1), 0xB0, 0,0)
+	if ix <= 0 Then
+		return SayCharacter() ;overflow
+	EndIf
+	ix = ix & 0xffff
+	ix = ix + 1
+	text = GetObjectValue ()
+	while(ix > 0)
+		ix = ix - 1
+		var string ch = SubString (text, ix, 1)
+		if(!StringContains (numcoll, ch)) Then
+			ix = 0 ;break
+			var int isLetter = GetCharacterValue (ch) >= 65 && GetCharacterValue (ch) <= 90 ;uppercase
+			isLetter = isLetter + GetCharacterValue (ch) >= 97 && GetCharacterValue (ch) <= 122 ;lowercase
+			if(isLetter > 0) Then ;is a number
+				SayMessage(OT_MESSAGE,IntToString((StringContains (numcoll, currChar))-1))
+			Else
+				SayCharacter()
+			EndIf
+		EndIf
+	EndWhile
+
+EndFunction
+
 Void Function SayObjectTypeAndText (optional int nLevel, int includeContainerName)
 	if isInEdicoActivationDialog () Then
 		if StringContains (GetObjectName (true, nLevel), CTL_ESP_PC_CODE) Then
