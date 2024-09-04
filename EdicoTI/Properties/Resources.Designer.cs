@@ -63,7 +63,9 @@ namespace EdicoTI.Properties {
         /// <summary>
         ///   Looks up a localized string similar to UTILITY DI EDICO
         ///Da questa finestra di dialogo sarà possibile lanciare alcune funzioni di servizio di EDICO. Occorre prestare particolare attenzione poiché le impostazioni che si effettuano da questa finestra di dialogo non possono essere annullate.
-        ///Selezionare un&apos;opzione fra i pulsanti seguenti. E&apos; possibile spostarsi fra i pulsanti premendo Tab e selezionare un pulsante premendo Invio..
+        ///Selezionare un&apos;opzione fra i pulsanti seguenti. E&apos; possibile spostarsi fra i pulsanti premendo Tab e selezionare un pulsante premendo Invio.
+        ///
+        ///Edico Targato Italia è un software con licenza GNU General Public License. Per tutti i dettagli consultare il sorgen [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string dlgUtility {
             get {

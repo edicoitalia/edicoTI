@@ -64,5 +64,10 @@ namespace EdicoTI
 		{
 			Application.Exit();
 		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("https://github.com/edicoitalia/edicoTI");
+		}
 	}
 }

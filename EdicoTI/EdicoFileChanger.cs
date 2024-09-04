@@ -106,23 +106,26 @@ namespace EdicoTI
 			int maxPos = 0;
 			foreach(var xFile in elem.Elements())
 			{
-				string xPosition = xFile.Attribute("Position").Value;
-				if (xPosition != null)
+				try
 				{
-					int iPosition = Convert.ToInt16(xPosition);
-					if (iPosition >= maxPos) maxPos = iPosition + 1;
-				}
-				string xCurrent = xFile.Attribute("Current").Value;
-				if ((xCurrent != null) && (xCurrent == "1"))
-				{
-					xFile.Attribute("Current").Value = "0";
-				}
-				string xPath = xFile.Attribute("Path").Value;
-				if ((xPath != null) && (xPath.ToLower() == openFilePath.ToLower()))
-				{
-					xFile.Attribute("Current").Value = "1";
-					isPresent = true;
-				}
+					string xPosition = xFile.Attribute("Position").Value;
+					if (xPosition != null)
+					{
+						int iPosition = Convert.ToInt32(xPosition);
+						if (iPosition >= maxPos) maxPos = iPosition + 1;
+					}
+					string xCurrent = xFile.Attribute("Current").Value;
+					if ((xCurrent != null) && (xCurrent == "1"))
+					{
+						xFile.Attribute("Current").Value = "0";
+					}
+					string xPath = xFile.Attribute("Path").Value;
+					if ((xPath != null) && (xPath.ToLower() == openFilePath.ToLower()))
+					{
+						xFile.Attribute("Current").Value = "1";
+						isPresent = true;
+					}
+				} catch(Exception e) { } //skip file
 			}
 			if (!isPresent)
 			{

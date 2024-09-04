@@ -120,7 +120,9 @@
   <data name="dlgUtility" xml:space="preserve">
     <value>UTILITY DI EDICO
 Da questa finestra di dialogo sarà possibile lanciare alcune funzioni di servizio di EDICO. Occorre prestare particolare attenzione poiché le impostazioni che si effettuano da questa finestra di dialogo non possono essere annullate.
-Selezionare un'opzione fra i pulsanti seguenti. E' possibile spostarsi fra i pulsanti premendo Tab e selezionare un pulsante premendo Invio.</value>
+Selezionare un'opzione fra i pulsanti seguenti. E' possibile spostarsi fra i pulsanti premendo Tab e selezionare un pulsante premendo Invio.
+
+Edico Targato Italia è un software con licenza GNU General Public License. Per tutti i dettagli consultare il sorgente selezionando l'apposito pulsante e prendere visione del file LICENSE.</value>
   </data>
   <data name="jfwAdminNeeded" xml:space="preserve">
     <value>Per il corretto funzionamento di JAWS con EDICO è necessario copiare alcuni file nella cartella di di installazione di JAWS. Per fare questo sono necessari i permessi di amministratore. Si desidera procedere?

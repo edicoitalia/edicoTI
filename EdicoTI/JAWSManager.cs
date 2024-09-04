@@ -74,6 +74,7 @@ namespace EdicoTI
 			{
 				Process proc = new Process();
 				proc.StartInfo.FileName = Process.GetCurrentProcess().MainModule.FileName;
+				proc.StartInfo.Arguments = "/admInstall";
 				proc.StartInfo.UseShellExecute = true;
 				proc.StartInfo.Verb = "runas";
 				proc.Start();
@@ -151,6 +152,7 @@ namespace EdicoTI
 					{
 						copyIfNotExists(Path.Combine(sourceDir, "edico.jcf"), Path.Combine(destDir, "edicoTI.jcf"));
 					}
+					copyIfNotExists(Path.Combine(sourceDir, "edicoTI.jkm"), Path.Combine(destDir, "edicoTI.jkm"));
 					copyIfNotExists(Path.Combine(sourceDir, "edicoTI.jsb"), Path.Combine(destDir, "edicoTI.jsb"));
 					copyIfNotExists(Path.Combine(sourceDir, "edicoTI.jsm"), Path.Combine(destDir, "edicoTI.jsm"));
 					copyIfNotExists(Path.Combine(sourceDir, "edicoTI.jss"), Path.Combine(destDir, "edicoTI.jss"));

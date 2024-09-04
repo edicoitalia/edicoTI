@@ -7,9 +7,6 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EdicoTI
@@ -32,6 +29,12 @@ namespace EdicoTI
 				Application.EnableVisualStyles();
 				Application.SetCompatibleTextRenderingDefault(false);
 				Application.Run(new DlgUtility());
+			}
+			else if (args.Length > 0 && args[0] == "/admInstall")
+			{
+				Application.EnableVisualStyles();
+				Application.SetCompatibleTextRenderingDefault(false);
+				Application.Run(new MainForm(openFile,adminInstall:true));
 			}
 			else
 			{

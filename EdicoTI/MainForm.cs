@@ -20,17 +20,19 @@ namespace EdicoTI
 		private string fileParam;
 		private ClickOnceApplicationService clickOnceService;
 		private JAWSManager jawsManager;
-		public MainForm(string fileParam)
+		private bool adminInstall = false;
+		public MainForm(string fileParam, bool adminInstall = false)
 		{
 			InitializeComponent();
 			this.clickOnceService = new ClickOnceApplicationService(EDICO_CIDAT_DEPLOYMENT_URL);
 			this.jawsManager = new JAWSManager();
 			this.fileParam = fileParam;
+			this.adminInstall = adminInstall;
  		}
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
-			if(JAWSManager.amIAdmin())
+			if(JAWSManager.amIAdmin() && adminInstall)
 			{
 				//running admin to copy JAWS system files. Copy them and exits after a dialog alert.
 				jawsManager.adminCopy();
@@ -81,7 +83,7 @@ namespace EdicoTI
 
 		private void launchAll()
 		{
-			if (JAWSManager.amIAdmin()) return;
+			if (JAWSManager.amIAdmin() && adminInstall) return;
 			if(!clickOnceService.isInstalled())
 			{
 				DlgInfoText dlgWelcome = new DlgInfoText();
