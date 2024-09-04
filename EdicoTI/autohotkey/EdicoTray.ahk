@@ -1,6 +1,5 @@
-;(c) 2023 Alberto Zanella            
-; This file is part of the XXX distribution (https://github.com/xxxx or http://xxx.github.io).
-; Copyright (c) 2015 Liviu Ionescu.
+;(c) 2023-2024 Alberto Zanella            
+; This file is part of the Edico Targato Italia distribution (https://github.com/xxxx or http://xxx.github.io).
 ; 
 ; This program is free software: you can redistribute it and/or modify  
 ; it under the terms of the GNU General Public License as published by  
