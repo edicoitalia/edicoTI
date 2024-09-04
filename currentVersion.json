@@ -1,7 +1,7 @@
 {
    "edico":{
-      "version":"2023.2",
-      "url":"https://github.com/edicoitalia/edicoTI/releases/download/2023.2/edicoTI-setup.exe"
+      "version":"2024.1",
+      "url":"https://github.com/edicoitalia/edicoTI/releases/download/2024.1/edicoTI-setup.exe"
    },
    "edico-nvda":{
       "version":"1.3",
