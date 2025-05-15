@@ -4,14 +4,14 @@
 ; Author : Alberto Zanella
 ;
 ; A part of Edico Targato Italia
-; Copyright (C) 2023-2024 Alberto Zanella - EdicoItalia.it
+; Copyright (C) 2023-2025 Alberto Zanella - EdicoItalia.it
 ; This file is covered by the GNU General Public License.
 ; See the file LICENSE for more details.
 ; 
 ; ----------------------------------------------------
 
 #define MyAppName "Edico Targato Italia"
-#define MyAppVersion "2024"
+#define MyAppVersion "2025.1"
 #define MyAppPublisher "edicoitalia.it"
 #define MyAppURL "https://www.edicoitalia.it/"
 
