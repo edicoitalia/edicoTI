@@ -15,8 +15,9 @@ namespace EdicoTI
 {
 	public partial class MainForm : Form
 	{
-		private static string EDICO_CIDAT_DEPLOYMENT_URL = "http://cidat.once.es/repos/edico/Edico.application";
-		private int tick;
+		private static string EDICO_CIDAT_DEPLOYMENT_URL = "https://www.once.es/cti/repos/edico/Edico.application";
+        private static string OLD_EDICO_CIDAT_DEPLOYMENT_URL = "http://cidat.once.es/repos/edico/Edico.application";;
+        private int tick;
 		private string fileParam;
 		private ClickOnceApplicationService clickOnceService;
 		private JAWSManager jawsManager;
@@ -84,7 +85,7 @@ namespace EdicoTI
 		private void launchAll()
 		{
 			if (JAWSManager.amIAdmin() && adminInstall) return;
-			if(!clickOnceService.isInstalled())
+			if((!clickOnceService.isInstalled()) || (!new ClickOnceApplicationService(OLD_EDICO_CIDAT_DEPLOYMENT_URL).isInstalled()))
 			{
 				DlgInfoText dlgWelcome = new DlgInfoText();
 				dlgWelcome.InfoText = Properties.Resources.welcomeText;
