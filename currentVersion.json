@@ -4,7 +4,7 @@
       "url":"https://github.com/edicoitalia/edicoTI/releases/download/2024.1/edicoTI-setup.exe"
    },
    "edico-nvda":{
-      "version":"2025.1",
-      "url":"https://github.com/edicoitalia/edico-nvda/releases/download/2025.1/edico-2025.1.nvda-addon"
+      "version":"2025.2",
+      "url":"https://github.com/edicoitalia/edico-nvda/releases/download/2025.2/edico-2025.2.nvda-addon"
    }
 }
