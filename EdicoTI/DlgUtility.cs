@@ -1,6 +1,6 @@
 ﻿/*
  * A part of Edico Targato Italia
- * Copyright (C) 2023-2024 Alberto Zanella - EdicoItalia.it
+ * Copyright (C) 2023-2025 Alberto Zanella - EdicoItalia.it
  * This file is covered by the GNU General Public License.
  * See the file LICENSE for more details.
  * 
@@ -76,6 +76,11 @@ namespace EdicoTI
 		private void button2_Click(object sender, EventArgs e)
 		{
 			System.Diagnostics.Process.Start("https://github.com/edicoitalia/edicoTI");
+		}
+
+		private void button5_Click(object sender, EventArgs e)
+		{
+			MathpixXMLProcessor.ConvertHtmlToXhtml();
 		}
 	}
 }

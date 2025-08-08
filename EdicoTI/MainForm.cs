@@ -1,6 +1,6 @@
 ﻿/*
  * A part of Edico Targato Italia
- * Copyright (C) 2023-2024 Alberto Zanella - EdicoItalia.it
+ * Copyright (C) 2023-2025 Alberto Zanella - EdicoItalia.it
  * This file is covered by the GNU General Public License.
  * See the file LICENSE for more details.
  * 
@@ -15,7 +15,7 @@ namespace EdicoTI
 {
 	public partial class MainForm : Form
 	{
-		private static string EDICO_CIDAT_DEPLOYMENT_URL = "http://cidat.once.es/repos/edico/Edico.application";
+		private static string EDICO_CIDAT_DEPLOYMENT_URL = "http://cti.once.es/repos/edico/Edico.application";
 		private int tick;
 		private string fileParam;
 		private ClickOnceApplicationService clickOnceService;
@@ -28,6 +28,7 @@ namespace EdicoTI
 			this.jawsManager = new JAWSManager();
 			this.fileParam = fileParam;
 			this.adminInstall = adminInstall;
+			
  		}
 
 		private void MainForm_Load(object sender, EventArgs e)

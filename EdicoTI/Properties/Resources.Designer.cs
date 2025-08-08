@@ -62,10 +62,12 @@ namespace EdicoTI.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to UTILITY DI EDICO
-        ///Da questa finestra di dialogo sarà possibile lanciare alcune funzioni di servizio di EDICO. Occorre prestare particolare attenzione poiché le impostazioni che si effettuano da questa finestra di dialogo non possono essere annullate.
+        ///Da questa finestra di dialogo sarà possibile lanciare alcune funzioni di servizio di EDICO. 
         ///Selezionare un&apos;opzione fra i pulsanti seguenti. E&apos; possibile spostarsi fra i pulsanti premendo Tab e selezionare un pulsante premendo Invio.
         ///
-        ///Edico Targato Italia è un software con licenza GNU General Public License. Per tutti i dettagli consultare il sorgen [rest of string was truncated]&quot;;.
+        ///La funzione di conversione è disponibile per facilitare l&apos;importazione di documenti convertiti con l&apos;OCR MathPix. Da MathPix scegliere Salva come HTML.
+        ///
+        ///Per le funzioni di reset e ripristino occorre prestare particolare attenzione poiché le operazioni no [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string dlgUtility {
             get {

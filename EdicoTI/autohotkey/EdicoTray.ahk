@@ -1,4 +1,4 @@
-;(c) 2023-2024 Alberto Zanella            
+;(c) 2023-2025 Alberto Zanella            
 ; This file is part of the Edico Targato Italia distribution (https://github.com/xxxx or http://xxx.github.io).
 ; 
 ; This program is free software: you can redistribute it and/or modify  
