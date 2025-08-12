@@ -89,15 +89,17 @@ namespace EdicoTI
             { "</blockquote>", "" },
             { "<tr.*?>", "" },
             { "</tr>", "" }
+
 };
 
                 for (int i = 0; i < replacements.GetLength(0); i++)
                 {
                     body = Regex.Replace(body, replacements[i, 0], replacements[i, 1], RegexOptions.Singleline);
                 }
-
                 // Extract main content
                 body = ExtractMainContent(body);
+                body = Regex.Replace(body, "<p>(\\s*<p>)+", "<p>", RegexOptions.Singleline);
+                body = Regex.Replace(body, "</p>(\\s*</p>)+", "</p>", RegexOptions.Singleline);
                 if (body == null)
                 {
                     return false; // Error already shown in ExtractMainContent
