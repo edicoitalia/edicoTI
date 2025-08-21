@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * A part of Edico Targato Italia
+ * Copyright (C) 2023-2025 Alberto Zanella - EdicoItalia.it
+ * This file is covered by the GNU General Public License.
+ * See the file LICENSE for more details.
+ * 
+*/
+using System;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
